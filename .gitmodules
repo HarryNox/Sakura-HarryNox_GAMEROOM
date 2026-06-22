@@ -4,6 +4,3 @@
 [submodule "games/re_kanetsukirush"]
 	path = games/re_kanetsukirush
 	url = https://github.com/HarryNox/re_kanetsukirush.git
-[submodule "games/MBTIQuest"]
-	path = games/MBTIQuest
-	url = https://github.com/HarryNox/MBTIQuest.git
