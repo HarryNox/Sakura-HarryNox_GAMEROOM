@@ -1,16 +1,32 @@
-# React + Vite
+# Sakura-HarryNox GAMEROOM
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Sakura-HarryNox GAMEROOM をプレイする](https://HarryNox.github.io/Sakura-HarryNox_GAMEROOM/)
 
-Currently, two official plugins are available:
+Sakura@HarryNox が制作した複数のブラウザゲームを1つのポータルから遊べるゲームランチャー（統合Webアプリ）です。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 収録タイトル
+- **MBTI Quest**: 16種類の性格タイプ（MBTI）が冒険するデータ駆動型のRPGシステム。
+- **Balance Bird**: 鳥を操作して障害物を避けるハイスピード・アーケードゲーム。
+- **Kanetsuki Rush**: 除夜の鐘を打ち鳴らすダイナミックなリズムアクション。
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📜 利用規約 (Terms of Use)
 
-## Expanding the ESLint configuration
+GitHubの仕様上、このリポジトリのソースコードは誰でも閲覧・ダウンロードできる状態になっていますが、**著作権は放棄しておりません**。以下のルールを守ってご利用ください。
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### ⭕ 許可されていること (Allowed)
+- ゲームをプレイして楽しむこと。
+- Twitter (X) や SNS、ブログ等で、このゲームのURL（プレイリンク）をシェアすること。
+- プログラミングの学習や個人の勉強目的で、ソースコードをダウンロードして参考にすること。
+
+### ❌ 禁止されていること (Prohibited)
+- ソースコードや画像・音楽などのアセット素材を、**商用・非商用問わず無断で再配布・転載すること**。
+- コードの一部を書き換えて、自分のオリジナルゲームであるかのように別サイト等で公開・配布すること。
+- ゲームの販売、または直接的な利益を得る目的での利用。
+
+### 免責事項
+当ゲームを利用したことによって生じたいかなるトラブルや損害についても、制作者（Sakura@HarryNox）は一切の責任を負いません。
+
+---
+*made by Sakura@HarryNox*
