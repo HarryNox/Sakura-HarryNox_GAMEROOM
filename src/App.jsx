@@ -55,6 +55,7 @@ function App() {
       <div className="sidebar">
         <div className="sidebar-header">
           <h1>GAMEROOM</h1>
+          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '4px' }}>made by Sakura@HarryNox</div>
         </div>
         <div className="game-list">
           {gamesData.map(game => (
