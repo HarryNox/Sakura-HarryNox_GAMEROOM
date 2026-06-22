@@ -88,7 +88,7 @@ function App() {
               </button>
             </div>
             <iframe 
-              src={selectedGame.url} 
+              src={`${selectedGame.url}?t=${Date.now()}`} 
               className="game-iframe" 
               title={selectedGame.title}
               allow="autoplay; fullscreen"
