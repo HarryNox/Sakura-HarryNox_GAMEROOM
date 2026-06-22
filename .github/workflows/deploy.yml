@@ -52,6 +52,7 @@ jobs:
         run: |
           mkdir -p dist/games
           # Copy static games as they are
+          cp -r games/harrynox-sakura-gamelab dist/games/
           cp -r games/BalanceBird dist/games/
 
       # 3. Build Vite Game (re_kanetsukirush)

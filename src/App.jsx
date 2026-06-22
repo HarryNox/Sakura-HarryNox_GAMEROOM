@@ -10,10 +10,10 @@ const gamesData = [
   {
     id: 'mbti-quest',
     title: 'MBTI Quest',
-    description: 'A data-driven RPG system built in Unity where 16 different MBTI personalities embark on an epic journey. (Note: Currently a Unity project repository in development, not playable in browser)',
+    description: 'A data-driven RPG system where 16 different MBTI personalities embark on an epic journey. Test your skills in this web-based adventure!',
     cover: coverMBTI,
-    url: 'https://github.com/HarryNox/MBTIQuest',
-    isExternal: true
+    url: '/Sakura-HarryNox_GAMEROOM/games/harrynox-sakura-gamelab/index.html',
+    isExternal: false
   },
   {
     id: 'balance-bird',
