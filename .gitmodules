@@ -1,9 +1,9 @@
-[submodule "games/harrynox-sakura-gamelab"]
-	path = games/harrynox-sakura-gamelab
-	url = https://github.com/HarryNox/harrynox-sakura-gamelab.git
 [submodule "games/BalanceBird"]
 	path = games/BalanceBird
 	url = https://github.com/HarryNox/BalanceBird.git
 [submodule "games/re_kanetsukirush"]
 	path = games/re_kanetsukirush
 	url = https://github.com/HarryNox/re_kanetsukirush.git
+[submodule "games/MBTIQuest"]
+	path = games/MBTIQuest
+	url = https://github.com/HarryNox/MBTIQuest.git

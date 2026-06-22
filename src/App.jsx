@@ -2,31 +2,34 @@ import { useState } from 'react';
 import './index.css';
 
 // Importing generated placeholder cover arts
-import coverSakura from './assets/covers/sakura_gamelab.png';
+import coverMBTI from './assets/covers/mbti_quest.png';
 import coverBalance from './assets/covers/balance_bird.png';
 import coverKanetsuki from './assets/covers/kanetsuki_rush.png';
 
 const gamesData = [
   {
-    id: 'sakura-gamelab',
-    title: 'Sakura GameLab',
-    description: 'A collection of experimental mini-games developed in a lab environment. Experience various mechanics and enjoy the beautiful sakura-themed aesthetics.',
-    cover: coverSakura,
-    url: '/Sakura-HarryNox_GAMEROOM/games/harrynox-sakura-gamelab/index.html'
+    id: 'mbti-quest',
+    title: 'MBTI Quest',
+    description: 'A data-driven RPG system built in Unity where 16 different MBTI personalities embark on an epic journey. (Note: Currently a Unity project repository in development, not playable in browser)',
+    cover: coverMBTI,
+    url: 'https://github.com/HarryNox/MBTIQuest',
+    isExternal: true
   },
   {
     id: 'balance-bird',
     title: 'Balance Bird',
     description: 'Test your reflexes and balance! Keep the bird flying through challenging obstacles in this addictive, fast-paced arcade experience.',
     cover: coverBalance,
-    url: '/Sakura-HarryNox_GAMEROOM/games/BalanceBird/index.html'
+    url: '/Sakura-HarryNox_GAMEROOM/games/BalanceBird/index.html',
+    isExternal: false
   },
   {
     id: 'kanetsuki-rush',
     title: 'Kanetsuki Rush',
     description: 'Feel the rush as you strike the temple bell! A dynamic action game with intense rhythm and striking visual effects.',
     cover: coverKanetsuki,
-    url: '/Sakura-HarryNox_GAMEROOM/games/re_kanetsukirush/index.html'
+    url: '/Sakura-HarryNox_GAMEROOM/games/re_kanetsukirush/index.html',
+    isExternal: false
   }
 ];
 
@@ -35,7 +38,11 @@ function App() {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const handlePlay = () => {
-    setIsPlaying(true);
+    if (selectedGame.isExternal) {
+      window.open(selectedGame.url, '_blank');
+    } else {
+      setIsPlaying(true);
+    }
   };
 
   const handleBack = () => {
@@ -96,10 +103,23 @@ function App() {
               <h1 className="game-title">{selectedGame.title}</h1>
               <p className="game-description">{selectedGame.description}</p>
               <button className="play-button" onClick={handlePlay}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                </svg>
-                PLAY NOW
+                {selectedGame.isExternal ? (
+                  <>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    VIEW REPOSITORY
+                  </>
+                ) : (
+                  <>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                    PLAY NOW
+                  </>
+                )}
               </button>
             </div>
           </div>
