@@ -244,8 +244,26 @@ body {
 
 /* Responsive Design for Smartphones */
 @media (max-width: 768px) {
+  body, #root {
+    overflow: auto !important;
+    height: auto !important;
+    min-height: 100dvh;
+  }
+  
   .app-container {
     flex-direction: column;
+    height: auto;
+    min-height: 100dvh;
+  }
+  
+  .main-content {
+    flex: none;
+    height: 85dvh;
+  }
+  
+  .player-container, .game-details {
+    position: relative;
+    height: 100%;
   }
 
   .sidebar {
