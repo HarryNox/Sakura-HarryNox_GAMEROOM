@@ -10,7 +10,7 @@ const gamesData = [
   {
     id: 'mbti-quest',
     title: 'MBTI Quest',
-    description: 'A data-driven RPG system where 16 different MBTI personalities embark on an epic journey. Test your skills in this web-based adventure!',
+    description: '16種類の性格タイプ（MBTI）が壮大な冒険に出発するデータ駆動型のRPGシステム。独自のスキルを駆使して、Webブラウザ上で本格的な冒険に挑もう！',
     cover: coverMBTI,
     url: '/Sakura-HarryNox_GAMEROOM/games/harrynox-sakura-gamelab/index.html',
     isExternal: false
@@ -18,7 +18,7 @@ const gamesData = [
   {
     id: 'balance-bird',
     title: 'Balance Bird',
-    description: 'Test your reflexes and balance! Keep the bird flying through challenging obstacles in this addictive, fast-paced arcade experience.',
+    description: 'あなたの反射神経とバランス感覚が試される！迫りくる障害物を巧みに避けながら鳥を飛ばし続ける、中毒性の高いハイスピード・アーケードゲーム。',
     cover: coverBalance,
     url: '/Sakura-HarryNox_GAMEROOM/games/BalanceBird/index.html',
     isExternal: false
@@ -26,7 +26,7 @@ const gamesData = [
   {
     id: 'kanetsuki-rush',
     title: 'Kanetsuki Rush',
-    description: 'Feel the rush as you strike the temple bell! A dynamic action game with intense rhythm and striking visual effects.',
+    description: '除夜の鐘を激しく打ち鳴らせ！疾走感あふれるリズムと派手なエフェクトが爽快な、新感覚のダイナミック・アクションゲーム。',
     cover: coverKanetsuki,
     url: '/Sakura-HarryNox_GAMEROOM/games/re_kanetsukirush/index.html',
     isExternal: false
@@ -83,7 +83,7 @@ function App() {
                   <line x1="19" y1="12" x2="5" y2="12"></line>
                   <polyline points="12 19 5 12 12 5"></polyline>
                 </svg>
-                Back to Library
+                ライブラリに戻る
               </button>
             </div>
             <iframe 
@@ -117,14 +117,14 @@ function App() {
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <polygon points="5 3 19 12 5 21 5 3"></polygon>
                     </svg>
-                    PLAY NOW
+                    プレイする
                   </>
                 )}
               </button>
             </div>
           </div>
         ) : (
-          <div className="empty-state">Select a game from the library</div>
+          <div className="empty-state">ライブラリからゲームを選択してください</div>
         )}
       </div>
     </div>
