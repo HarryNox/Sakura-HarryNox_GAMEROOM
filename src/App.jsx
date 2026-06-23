@@ -1,14 +1,17 @@
 import { useState } from 'react';
 import './index.css';
 
-// Cover arts replaced with CSS gradients to comply with non-AI assets rules
+// Cover arts replaced with in-game assets and SVGs to comply with non-AI assets rules
+import coverMBTI from './assets/covers/mbti_quest.png';
+import coverBalance from './assets/covers/balance_bird.svg';
+import coverKanetsuki from './assets/covers/kanetsuki_rush.svg';
 
 const gamesData = [
   {
     id: 'mbti-quest',
     title: 'MBTI Quest',
     description: '16種類の性格タイプ（MBTI）が壮大な冒険に出発するデータ駆動型のRPGシステム。独自のスキルを駆使して、Webブラウザ上で本格的な冒険に挑もう！',
-    coverStyle: { background: 'linear-gradient(135deg, #1e1b4b, #312e81, #1e1b4b)', border: '2px solid #8b5cf6' },
+    cover: coverMBTI,
     url: '/Sakura-HarryNox_GAMEROOM/games/harrynox-sakura-gamelab/index.html',
     isExternal: false
   },
@@ -16,7 +19,7 @@ const gamesData = [
     id: 'balance-bird',
     title: 'Balance Bird',
     description: 'あなたの反射神経とバランス感覚が試される！迫りくる障害物を巧みに避けながら鳥を飛ばし続ける、中毒性の高いハイスピード・アーケードゲーム。',
-    coverStyle: { background: 'linear-gradient(180deg, #1e293b, #0f172a)', border: '2px solid #38bdf8' },
+    cover: coverBalance,
     url: '/Sakura-HarryNox_GAMEROOM/games/BalanceBird/index.html',
     isExternal: false
   },
@@ -24,7 +27,7 @@ const gamesData = [
     id: 'kanetsuki-rush',
     title: 'Kanetsuki Rush',
     description: '除夜の鐘を激しく打ち鳴らせ！疾走感あふれるリズムと派手なエフェクトが爽快な、新感覚のダイナミック・アクションゲーム。',
-    coverStyle: { background: 'radial-gradient(circle at center, #334155, #0f172a)', border: '2px solid #eab308' },
+    cover: coverKanetsuki,
     url: '/Sakura-HarryNox_GAMEROOM/games/re_kanetsukirush/index.html',
     isExternal: false
   }
@@ -66,7 +69,7 @@ function App() {
                 setIsPlaying(false);
               }}
             >
-              <div className="game-icon" style={game.coverStyle}></div>
+              <img src={game.cover} alt="" className="game-icon" />
               <span>{game.title}</span>
             </div>
           ))}
@@ -96,9 +99,9 @@ function App() {
         ) : selectedGame ? (
           <div 
             className="game-details" 
-            style={selectedGame.coverStyle}
+            style={{ backgroundImage: `url(${selectedGame.cover})` }}
           >
-            <div className="game-details-overlay" style={{ background: 'rgba(15, 23, 42, 0.8)' }}></div>
+            <div className="game-details-overlay"></div>
             <div className="game-info">
               <h1 className="game-title">{selectedGame.title}</h1>
               <p className="game-description">{selectedGame.description}</p>
