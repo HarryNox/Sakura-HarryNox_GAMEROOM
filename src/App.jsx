@@ -50,7 +50,7 @@ function App() {
   };
 
   return (
-    <div className="app-container">
+    <div className={`app-container ${isPlaying ? 'is-playing' : ''}`}>
       {/* Sidebar Game List */}
       <div className="sidebar">
         <div className="sidebar-header">

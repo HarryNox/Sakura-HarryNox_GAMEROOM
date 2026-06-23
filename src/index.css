@@ -280,6 +280,10 @@ body {
     border-right: none;
     border-bottom: 1px solid var(--glass-border);
   }
+  
+  .app-container.is-playing .sidebar {
+    display: none;
+  }
 
   .sidebar-header {
     padding: 16px;
