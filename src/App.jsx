@@ -36,11 +36,13 @@ const gamesData = [
 function App() {
   const [selectedGame, setSelectedGame] = useState(gamesData[0]);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [playMode, setPlayMode] = useState('pc');
 
-  const handlePlay = () => {
+  const handlePlay = (mode) => {
     if (selectedGame.isExternal) {
       window.open(selectedGame.url, '_blank');
     } else {
+      setPlayMode(mode);
       setIsPlaying(true);
     }
   };
@@ -88,7 +90,7 @@ function App() {
               </button>
             </div>
             <iframe 
-              src={`${selectedGame.url}?t=${Date.now()}`} 
+              src={`${selectedGame.url}?mode=${playMode}&t=${Date.now()}`} 
               className="game-iframe" 
               title={selectedGame.title}
               allow="autoplay; fullscreen"
@@ -103,25 +105,36 @@ function App() {
             <div className="game-info">
               <h1 className="game-title">{selectedGame.title}</h1>
               <p className="game-description">{selectedGame.description}</p>
-              <button className="play-button" onClick={handlePlay}>
+              <div className="play-button-group" style={{ display: 'flex', gap: '1rem', marginTop: '2rem' }}>
                 {selectedGame.isExternal ? (
-                  <>
+                  <button className="play-button" onClick={() => handlePlay('pc')}>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                       <polyline points="15 3 21 3 21 9"></polyline>
                       <line x1="10" y1="14" x2="21" y2="3"></line>
                     </svg>
                     VIEW REPOSITORY
-                  </>
+                  </button>
                 ) : (
                   <>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                    </svg>
-                    プレイする
+                    <button className="play-button" onClick={() => handlePlay('mobile')} style={{ flex: 1, backgroundColor: '#f43f5e', borderColor: '#f43f5e', boxShadow: '0 0 15px rgba(244, 63, 94, 0.4)' }}>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                        <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                      </svg>
+                      スマホでプレイ
+                    </button>
+                    <button className="play-button" onClick={() => handlePlay('pc')} style={{ flex: 1 }}>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                      </svg>
+                      PCでプレイ
+                    </button>
                   </>
                 )}
-              </button>
+              </div>
             </div>
           </div>
         ) : (
