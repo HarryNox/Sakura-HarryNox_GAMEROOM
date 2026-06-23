@@ -99,7 +99,7 @@ function App() {
         ) : selectedGame ? (
           <div 
             className="game-details" 
-            style={{ backgroundImage: `url(${selectedGame.cover})` }}
+            style={{ backgroundImage: `url("${selectedGame.cover}")` }}
           >
             <div className="game-details-overlay"></div>
             <div className="game-info">
